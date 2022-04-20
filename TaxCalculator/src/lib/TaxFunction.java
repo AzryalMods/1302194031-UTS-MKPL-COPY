@@ -14,6 +14,9 @@ public class TaxFunction {
 	 * 
 	 */
 	
+	private static final int EmployeeNotMerriedNoChild = 54000000;
+	private static final int EmployeeMerried = 4500000;
+	private static final int EmployeeMerriedChild = 4500000;
 	
 	public static int calculateTax(int monthlySalary, int otherMonthlyIncome, int numberOfMonthWorking, int deductible, boolean isMarried, int numberOfChildren) {
 		
