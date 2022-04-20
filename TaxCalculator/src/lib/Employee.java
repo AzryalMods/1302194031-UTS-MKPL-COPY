@@ -23,24 +23,51 @@ public class Employee {
 	
 	private List<ChildData> childdata;
 
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, boolean isForeigner, Gender gender) {
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.idNumber = idNumber;
 		this.address = address;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
 		this.gender = gender;
 		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+		childdata = new LinkedList<ChildData>();
+	}
+
+	public String getEmployeeId() {
+		return employeeId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getIdNumber() {
+		return idNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public boolean isForeigner() {
+		return isForeigner;
+	}
+
+	public int getTotalChildrens(){
+		return childdata.size();
+	}
+
+	public Gender getGender() {
+		return gender;
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
+		childdata.add(new ChildData(childName,childIdNumber));
 	}
 }
